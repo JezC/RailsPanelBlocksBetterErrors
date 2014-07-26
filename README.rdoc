@@ -9,3 +9,13 @@ then BetterErrors won't show data in the right hand panel and the companion gem
 BindingOfCaller, also fails - no pane, no REPL.
 
 Tested on Nitrous, using Ruby 1.9.3 p547.
+
+Note, if you run this, there is a potential security implication.
+
+Nitrous is a cloudy IDE. So the dev server is not on 127.0.0.1, It is made visible
+across the interweb. Don't want BetterErrors giving everone access, so it is usually
+locked to 127.0.0.1.
+
+In config/environments/development.rb, I have added a line to open up the Nitrous
+dev server to public use. BUT I HAVE ALSO ENABLED BASIC PASSWORD SECURITY and put
+it on an SSL server. Kinda hard to hack, so fairly safe.
